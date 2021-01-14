@@ -13,7 +13,7 @@ word_list = ["aardvark", "baboon", "camel"]
 chosen_word = word_list[random.randint(0,len(word_list)-1)]
 print(chosen_word)
 
-guess = input("Guess a letter: ")
+guess = input("Guess a letter: ").lower()
 
 for letter in chosen_word:
   if guess == letter:
