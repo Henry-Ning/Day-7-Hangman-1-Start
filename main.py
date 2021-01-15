@@ -13,10 +13,17 @@ word_list = ["aardvark", "baboon", "camel"]
 chosen_word = word_list[random.randint(0,len(word_list)-1)]
 print(chosen_word)
 
+display = []
+for letter in chosen_word:
+  display += "_"
+print(display)
+  
+
 guess = input("Guess a letter: ").lower()
 
-for letter in chosen_word:
-  if guess == letter:
-    print("Right")
-  else:
-    print("Wrong")
+for position in range(len(chosen_word)):
+  letter = chosen_word[position]
+  if letter == guess:
+    display[position] = letter
+
+print(display)
