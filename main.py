@@ -86,13 +86,16 @@ while not end_of_game:
         # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
         if letter == guess:
             display[position] = letter
+    
 
     #TODO-2: - If guess is not a letter in the chosen_word,
     #Then reduce 'lives' by 1. 
     #If lives goes down to 0 then the game should stop and it should print "You lose."
-    if letter != guess:
+    if guess not in chosen_word:
       lives -= 1
+      print("Current lives = " + str(lives))
       if lives == 0:
+        end_of_game = True
         print("you lose")
 
     #Join all the elements in the list and turn it into a String.
